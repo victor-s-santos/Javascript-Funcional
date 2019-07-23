@@ -24,5 +24,5 @@ fetch('https://cotaboxvictor.herokuapp.com/api/Participation/?format=json')
     console.error(err);
   });
 
-  //ler a documentação, e aplicar os conceitos visto de callback e promises
-   
+  //ler a documentação¹, e aplicar os conceitos visto de callback e promises
+  //[1]https://www.npmjs.com/package/node-fetch 
