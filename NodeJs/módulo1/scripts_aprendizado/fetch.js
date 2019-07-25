@@ -37,5 +37,5 @@ const fetch = require('node-fetch');
   .catch((err) => {
     console.error(err);
   }); 
-  //ler a documentação¹, e aplicar os conceitos visto de callback e promises
+  //ler a documentação¹, fetch já retorna uma promise
   //[1]https://www.npmjs.com/package/node-fetch 

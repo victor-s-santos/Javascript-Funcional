@@ -32,7 +32,7 @@ function testa_primo(numero)
     return console.log(`${numero} é o único primo par!`);
   }else
   {
-    for(var x = 2; x < numero; x++)
+    for(let x = 2; x < numero; x++)
     {
       if(numero % x === 0)
       {

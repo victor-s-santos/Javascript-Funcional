@@ -9,7 +9,7 @@ function obterUsuario(){
     //ocorrendo sucesso -> resolve
     return new Promise(function ResolvePromise(resolve, reject){
         setTimeout(function () {
-            //return reject(new Error(`DEU RUIM NA PORRA TODA!`) )
+            //return reject(new Error(`DEU RUIM NA GALERA TODA!`) )
             return resolve({
                 id: 1,
                 nome: 'Carlos',
