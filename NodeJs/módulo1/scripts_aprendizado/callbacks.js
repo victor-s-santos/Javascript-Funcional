@@ -50,7 +50,9 @@ function Usuario_assincrono2(callback){
 }
 
 function ResolverUsuario_assincrono2(erro, usuario){
-    console.log('usuario', usuario.nome)
+    console.log(`
+    Nome:${usuario.nome},
+    Data:${usuario.data}`)
 }
 
 const obter_usuario2 = Usuario_assincrono2(ResolverUsuario_assincrono2)
