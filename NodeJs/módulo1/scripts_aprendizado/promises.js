@@ -22,17 +22,15 @@ function obterTelefone(id){
         }, 2000);
     })
 }
-//aaaaaaaaaashu^^
+
 const usuario_promise = Usuario_assincrono2()
 usuario_promise
     .then(function (usuario){
         return obterTelefone(usuario.id)
             .then(function resolverTelefone(result){
                 return{
-                    usuario: {
-                        nome: usuario.nome,
-                        id: usuario.id
-                    },
+                    id: usuario.id,
+                    usuario: usuario.nome,
                     telefone: result.telefone
                 }
             })
@@ -44,3 +42,4 @@ usuario_promise
     .catch(function(erro){
         console.error('ALGO DE ERRADO NAO ESTÁ CERTO!', erro)
     });
+
