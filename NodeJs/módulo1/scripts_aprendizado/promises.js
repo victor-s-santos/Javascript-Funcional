@@ -13,7 +13,7 @@ function Usuario_assincrono2(){
 
 }
 function obterTelefone(id){
-    return new Promise(function ResolverPromise(resolve, reject){
+    return new Promise(function ResolvePromise(resolve, reject){
         setTimeout(() => {
             return resolve({
                 telefone: '33164035',
