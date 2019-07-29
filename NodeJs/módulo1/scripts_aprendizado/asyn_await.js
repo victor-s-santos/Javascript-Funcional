@@ -40,4 +40,4 @@ async function main(){
 }
 main()
 
-//maneira mais simples que a anterior de resolver promises
+//uma maneira mais simples que a anterior de resolver promises
