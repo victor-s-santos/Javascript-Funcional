@@ -34,5 +34,5 @@ async function main(){
         console.error('Algo de errado não está certo!', error)
     }
 }
-
+//como o laço executa 3 vezes, a lista names tem o triplo de conteúdo
 main()
