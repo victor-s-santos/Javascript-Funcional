@@ -45,6 +45,19 @@ class Database{
         const heroisFiltrados = dados.filter(item =>(id ? (item.id === id): true))
         return heroisFiltrados
     }
+    async remover(id){
+        if(!id){
+            return await this.escreverHeroi([])
+        }
+        const dados = await this.obterHeroi()
+        //console.log('id', id)
+        const indice = dados.findIndex(item => item.id === parseInt(id))
+        if(indice === -1){
+            throw Error('Usuário inexistente!')
+        }
+        dados.splice(indice, 1)
+        return await this.escreverHeroi(dados)
+    }
 }
 
 module.exports = new Database()

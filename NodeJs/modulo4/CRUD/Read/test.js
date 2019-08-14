@@ -9,7 +9,11 @@ const ITEM_PADRAO = {
     poder: 'Luz Verde',
     id: 1
 }
-
+const ATUALIZADO_PADRAO = {
+    nome: 'Goku',
+    poder: 'Supera o poder de qualquer adversário',
+    id: 2
+}
 describe('Suite de manipulação de Heróis!', ()=>{
     before(async () => {
         await database.cadastrarHeroi(ITEM_PADRAO)//evita de executar os próximos passos, sem item cadastrado
@@ -25,5 +29,17 @@ describe('Suite de manipulação de Heróis!', ()=>{
         const [atual] = await database.listar(ITEM_PADRAO.id)
         deepEqual(atual, expected)
     })
-
+    it('deve remover um herói por id', async () => {
+        const expected = true;
+        const resultado = await database.remover(ITEM_PADRAO.id)
+        deepEqual(resultado, expected)
+    })
+    it('deve atualizar o heroi pelo id', async () => {
+        const expected = {
+            ...ATUALIZADO_PADRAO,
+            nome: 'Gohan',
+            poder: 'Híbrido'
+        }
+        const resultado = await database.atualizar(ATUALIZADO_PADRAO.id, expected)
+    })
 })

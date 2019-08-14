@@ -4,7 +4,8 @@ fetch('https://cotaboxvictor.herokuapp.com/api/Participation/?format=json')
     return res.json() 
   })
   .then((Data) => {
-    resultado = Data[0];
+    [resultado] = Data;
+    // [...resultado] = Data;
     // var nome = [];
     // var participacao = [];
     // const w = Data.length - 1;
