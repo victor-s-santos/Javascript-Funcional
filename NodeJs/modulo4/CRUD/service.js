@@ -58,6 +58,26 @@ class Database{
         dados.splice(indice, 1)
         return await this.escreverHeroi(dados)
     }
+
+    async atualizar(id, modificacoes){
+        const dados = await this.obterHeroi()
+        const indice = dados.findIndex(item => item.id === parseInt(id))
+        if(indice === -1){
+            throw Error('Herói informado não encontrado')
+        }
+        const atual = dados[indice]
+        const objetoAtualizar = {
+            ...atual,
+            ...modificacoes
+        }
+        dados.splice(indice, 1)
+        return await this.escreverHeroi([
+            ...dados,
+            objetoAtualizar
+        ])
+
+        // return false
+    }
 }
 
 module.exports = new Database()
