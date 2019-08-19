@@ -16,6 +16,7 @@ const ATUALIZADO_PADRAO = {
 }
 describe('Suite de manipulação de Heróis!', ()=>{
     before(async () => {
+        await database.remover();
         await database.cadastrarHeroi(ITEM_PADRAO)//evita de executar os próximos passos, sem item cadastrado
         await database.cadastrarHeroi(ATUALIZADO_PADRAO)
     })
@@ -24,7 +25,7 @@ describe('Suite de manipulação de Heróis!', ()=>{
         const [resultado] = await database.listar(expected.id)
         deepEqual(resultado, expected)
     })
-    it.only('deve cadastrar um herói, usando arquivos', async () => {
+    it('deve cadastrar um herói, usando arquivos', async () => {
         const expected = ITEM_PADRAO
         const resultado = await database.cadastrarHeroi(ITEM_PADRAO)
         const [atual] = await database.listar(ITEM_PADRAO.id)

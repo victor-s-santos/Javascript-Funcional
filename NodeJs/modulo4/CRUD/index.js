@@ -11,7 +11,7 @@ async function main(){
     const heroi = new Heroi(Commander)   
     try{
         if(Commander.cadastrar){
-            const resultado = await Database.cadastrarHeroi(Commander)
+            const resultado = await Database.cadastrarHeroi(heroi)
             if(!resultado){
                 console.error('Herói não foi cadastrado!')
                 return;
