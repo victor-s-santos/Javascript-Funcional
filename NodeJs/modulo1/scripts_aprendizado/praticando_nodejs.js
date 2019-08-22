@@ -10,17 +10,17 @@ fetch('https://cotaboxvictor.herokuapp.com/api/Participation/?format=json')
     return res.json() 
   })
   .then((Data) => {
-    var nome = [];
+    var nome_participacao = [];
             //var participacao = [];
             const w = Data.length - 1;
             let i = 0;
             while(i <= w){
-                nome.push(`${Data[i].first_name}  ${Data[i].last_name} \n`);
+                nome_participacao.push(`${Data[i].first_name} ${Data[i].last_name} \n Participação: ${Data[i].participation} \n`);
                 //participacao.push(`${Data[i].participation}`);
                 i ++; 
             } 
-            console.log(nome)
-    fs.writeFileSync('arquivo2.txt',nome)
+            console.log(nome_participacao)
+    fs.writeFileSync('arquivo2.txt',nome_participacao)
   })
   .catch((err) => {
     console.error(err);
