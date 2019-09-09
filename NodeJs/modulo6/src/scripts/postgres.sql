@@ -14,4 +14,10 @@ VALUES
 --verbo read
 SELECT * FROM TB_HEROIS;
 SELECT * FROM TB_HEROIS WHERE NOME= 'Vegeta';
-SELECT PODER FROM TB_HEROIS WHERE NOME= 'Orgulho';
+SELECT NOME FROM TB_HEROIS WHERE PODER= 'Orgulho';
+--assim deve retornar Vegeta
+
+--verbo update
+UPDATE TB_HEROIS
+SET NOME= 'Freeza', PODER= 'Pura crueldade'
+WHERE ID = 1;
