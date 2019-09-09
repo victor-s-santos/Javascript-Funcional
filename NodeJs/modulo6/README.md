@@ -11,14 +11,18 @@ sudo docker run \
 
 sudo docker ps
 sudo docker exec -it postgres /bin/bash
-
+'''
+com o comando acima, se tem acesso ao interior do container podendo rodar qualquer comando dentro do mesmo
+'''
 sudo docker run \
     --name adminer \
     -p 8080:8080 \
     --link postgres:postgres \
     -d \
     adminer
-
+'''
+esta linha possibilita o acesso a interface administrativa obtida com o adminer, e o -d garante que este execute em segundo plano
+'''
 ## ---- MongoDB
 
 sudo docker run \
@@ -36,6 +40,15 @@ sudo docker run \
     -d \
     mongoclient/mongoclient
 
+'''
+igualmente ao postgres, esta linha possibilita o acesso a interface administrativa obtida com o mongoclient, e o -d garante que este execute em segundo plano
+'''
+
 sudo docker exec -it mongodb \
     mongo --host localhost -u admin -p senha --authenticationDatabase admin \
     --eval "db.getSiblingDB('herois').createUser({user: 'vsantos', pwd: 'senha', roles:[{role: 'readWrite', db: 'herois'}]})"
+
+'''
+igualmente com o postgres, com o comando acima, se tem acesso ao interior do container podendo rodar qualquer comando dentro do mesmo, no caso, cria-se um usuário.
+'''
+
