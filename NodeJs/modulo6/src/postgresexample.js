@@ -34,7 +34,15 @@ async function main(){
         timestamps: false
     })
     await Herois.sync()
-    const resultado = await Herois.findAll({raw: true})
+    // await Herois.create({
+    //     nome: 'Android 17',
+    //     poder: 'Sobrevivente no torneio do poder.'
+    // })
+    const resultado = await Herois.findAll({
+        raw: true,
+        attributes: ['poder', 'nome']
+        
+    })
     console.log('Resultado: ', resultado)
 }
   
