@@ -5,7 +5,6 @@ class ContextStrategy extends ICrud{
         super()
         this._database = strategy
     }
-
     create(item){
         return this._database.create(item)
     }
@@ -18,7 +17,7 @@ class ContextStrategy extends ICrud{
     delete(id){
         return this._database.delete(id)
     }
-    isConected{
+    isConected(){
         return this._database.isConected()
     }
 }

@@ -1,17 +1,6 @@
+//npm install sequelize pg-hstore pg
+
 const Sequelize = require('sequelize')
-const driver = new Sequelize(
-    'herois',
-    'vsantos93',
-    'swordfish',
-    {
-        host: 'localhost',
-        dialect: 'postgres',
-        quoteIdentifiers: false,
-        operatorsAliases: false
-    }
-
-)
-
 async function main(){
     const Herois = driver.define('herois', {
         id:{
@@ -39,8 +28,8 @@ async function main(){
     //     poder: 'Sobrevivente no torneio do poder.'
     // })
     const resultado = await Herois.findAll({
-        raw: true,
-        attributes: ['poder', 'nome']
+        raw: true,//o raw faz com que seja retornado somente informações dos dados
+        attributes: ['poder', 'nome']//assim eu consigo retornar somente poder e nome
         
     })
     console.log('Resultado: ', resultado)
